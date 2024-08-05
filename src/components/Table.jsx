@@ -6,38 +6,38 @@ function Table() {
   return (
     <div className="bg-white-500 px-3 pt-3 pb-2 rounded-lg grid gap-4">
       <Tabletop />
-      <div class="relative overflow-x-auto">
-        <table class="w-full text-sm text-left rtl:text-right text-gray-500 ">
-          <thead class="text-xm font-medium rounded uppercase text-black-400">
+      <div className="relative overflow-x-auto">
+        <table className="w-full text-sm text-left rtl:text-right text-gray-500 ">
+          <thead className="text-xm font-medium rounded uppercase text-black-400">
             <tr>
-              <th scope="col" class="px-6 py-3 font-medium">
+              <th scope="col" className="px-6 py-3 font-semibold">
                 order ID
               </th>
-              <th scope="col" class="px-6 py-3 font-medium">
+              <th scope="col" className="px-6 py-3 font-semibold">
                 Status
               </th>
-              <th scope="col" class="px-6 py-3 font-medium">
+              <th scope="col" className="px-6 py-3 font-semibold">
                 Transaction ID
               </th>
-              <th scope="col" class="px-6 py-3 font-medium">
+              <th scope="col" className="px-6 py-3 font-semiboldmedium">
                 Refund date
               </th>
-              <th scope="col" class="px-6 py-3 text-right font-medium">
+              <th scope="col" className="px-5 py-3 text-right font-semibold">
                 Order amount
               </th>
             </tr>
           </thead>
-          {orderData.map((order) => {
+          {orderData.map((order, index) => {
             return (
-              <tbody>
-                <tr class="bg-white border-b">
+              <tbody key={index}>
+                <tr className="bg-white border-b">
                   <th
                     scope="row"
-                    class="px-6 py-4 font-medium text-blue-700 whitespace-nowrap"
+                    className="px-6 py-4 font-medium text-blue-700 whitespace-nowrap"
                   >
                     #{order.id}
                   </th>
-                  <td class="px-6 py-4 flex items-center gap-2 text-black-600">
+                  <td className="px-6 py-4 flex items-center gap-2 text-black-600">
                     {order.status === "Successful" && (
                       <div className="h-2.5 w-2.5 rounded-full bg-green-500" />
                     )}
@@ -49,11 +49,13 @@ function Table() {
                     )}
                     {order.status}
                   </td>
-                  <td class="px-6 py-4 text-black-400">
+                  <td className="px-6 py-4 text-black-400">
                     {order.transactionID}
                   </td>
-                  <td class="px-6 py-4 text-black-400">{order.refundDate}</td>
-                  <td class="px-6 py-4 text-right text-black-600">
+                  <td className="px-6 py-4 text-black-400">
+                    {order.refundDate}
+                  </td>
+                  <td className="px-10 py-4 text-right text-black-600">
                     {order.amount}
                   </td>
                 </tr>

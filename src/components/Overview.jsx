@@ -3,20 +3,11 @@ import RevenueCard from "./RevenueCard";
 import BlueCard from "./BlueCard";
 
 function Overview() {
-  const buttonValue = {
-    present: "This month",
-    dorpdown: [
-      "Past month",
-      "Past ka past Month",
-      "past ke past ka past month",
-    ],
-  };
-
   return (
     <div className="grid gap-6">
       <div className="flex justify-between items-center">
         <div className="text-xl font-medium">Overview</div>
-        <div className="grid grid-flow-col items-center gap-2 h-9 pl-3.5 pr-3.5 rounded border border-black-150">
+        <div className="grid grid-flow-col items-center gap-2 h-9 pl-3.5 pr-3.5 rounded border border-black-150 cursor-pointer">
           <p>This Month</p>
           <svg
             width="12"
